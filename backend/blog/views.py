@@ -23,15 +23,15 @@ class BlogPostFeaturedView(ListAPIView):
     lookup_field = 'slug'
     permission_classes = (permissions.AllowAny, )
 
-# class BlogPostCategoryView(APIView):
-#     serializer_class = BlogPostSerializer
-#     permission_classes = (permissions.AllowAny,)
+class BlogPostCategoryView(APIView):
+    serializer_class = BlogPostSerializer
+    permission_classes = (permissions.AllowAny,)
 
-#     def post(self, request, format=None):
-#         data = self.request.data
-#         category = data['category']
-#         queryset = BlogPost.objects.order_by('-date_created').filter(category__iexact=category)
+    def post(self, request, format=None):
+        data = self.request.data
+        category = data['category']
+        queryset = BlogPost.objects.order_by('-date_created').filter(category__iexact=category)
 
-#         serializer = BlogPostSerializer(queryset, many=True)
+        serializer = BlogPostSerializer(queryset, many=True)
 
-#         return Response(serializer.data)
+        return Response(serializer.data)
