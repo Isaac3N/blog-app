@@ -1,0 +1,36 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr 1.1fr;
+    grid-template-rows: 0.2fr 2fr 0.9fr 1.2fr 0.7fr;
+    gap: 10% 10%;
+    grid-template-areas:
+      "navigation navigation navigation"
+      "Introduction Introduction picture"
+      "projects projects projects"
+      "Categories articles articles"
+      "onlyfriends onlyfriends onlyfriends";
+  }
+  
+  .navigation { grid-area: navigation; }
+  
+  .Introduction { grid-area: Introduction; }
+  
+  .picture { grid-area: picture; }
+  
+  .Categories { grid-area: Categories; }
+  
+  .articles { grid-area: articles; }
+  
+  .projects {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr 1.1fr;
+    grid-template-rows: 1.1fr 0.9fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      ". . ."
+      ". . .";
+    grid-area: projects;
+  }
+  
+  .onlyfriends { grid-area: onlyfriends; }
+  
